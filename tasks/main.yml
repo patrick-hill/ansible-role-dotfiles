@@ -1,7 +1,12 @@
 ---
+- name: Install Git
+  apt:
+    pkg: git
+    state: installed
+
 # Creates src dir
 - name: Create .dotfiles dir
-  file: path="{{ dotfiles_dir }}" state=present
+  file: path="{{ dotfiles_dir }}" state=directory
 
 # Clone repo to: ~/.dotfiles
 - name: Clone dotfiles repo
